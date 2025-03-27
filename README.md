@@ -2,8 +2,7 @@
 
 # Date:27.03.2025
 # AIM:
-To develop a simple webserver to serve html pages and display the Details of My college
-
+To develop a simple webserver to serve html pages and display the configuration details of laptop.
 # DESIGN STEPS:
 ## Step 1:
 HTML content creation.
@@ -20,53 +19,59 @@ Serving the HTML pages.
 ## Step 5:
 Testing the webserver.
 
-# PROGRAM:
-
 from http.server import BaseHTTPRequestHandler, HTTPServer
 
-class My(BaseHTTPRequestHandler):
-    html_content = '''
+class MyHandler(BaseHTTPRequestHandler):
+    html_content = """
 <!doctype html>
 <html>
 <head>
-<title> Web Server</title>
+<title> My Web Server</title>
 </head>
 <body>
-<h1><center>About my college</center></h1>
+<h1><center>My Laptop Configuration Details</center></h1>
    <table border="1" cellpadding="10" align="center">
         <tr>
             <th bgcolor="blue">Specification</th>
             <th bgcolor="green">Details</th>
         </tr>
         <tr>
-            <td>Name</td>
-            <td>Saveetha Engineering college</td>
+            <td>Model</td>
+            <td>Asus vivo book</td>
         </tr>
         <tr>
-            <td>Courses</td>
-            <td>CSE,AI&DS,AI&ML,IT,ECE,etc.</td>
+            <td>Processor</td>
+            <td>Intel Core i5</td>
         </tr>
         <tr>
-            <td>Fees Structure</td>
-            <td>Based on your 12th marks</td>
+            <td>RAM</td>
+            <td>16GB</td>
         </tr>
         <tr>
-            <td>Placement</td>
-            <td>97%</td>
+            <td>Storage</td>a
+            <td>256GB SSD</td>
         </tr>
         <tr>
-            <td>Counselling code</td>
-            <td>1216</td>
+            <td>Graphics</td>
+            <td>Integrated Intel UHD Graphics</td>
         </tr>
         <tr>
-            <td>Infrastructure</td>
-            <td>Not Bad at all(but a little bad)</td>
+            <td>Display</td>
+            <td>14-inch FHD (1920 x 1080)</td>
+        </tr>
+        <tr>
+            <td>Operating System</td>
+            <td>Windows 10</td>
+        </tr>
+        <tr>
+            <td>Colours available</td>
+            <td>Black,White,Grey</td>
         </tr>
     </table>
 </body>
 </html>
 
-'''    
+"""    
     def do_GET(self):
         content = self.html_content
         print("Request received")
@@ -77,13 +82,12 @@ class My(BaseHTTPRequestHandler):
 
 # Define server address and port
 server_address = ('', 8000)  # Host on all available IPs, port 8000
-httpd = HTTPServer(server_address, My)
+httpd = HTTPServer(server_address, MyHandler)
 
 print("My webserver is running...")
 httpd.serve_forever()
+  
 # OUTPUT:
 
-![alt text](<Screenshot 2025-03-27 215056.png>)
-![alt text](<Screenshot 2025-03-27 215201.png>)
 # RESULT:
 The program for implementing simple webserver is executed successfully.
