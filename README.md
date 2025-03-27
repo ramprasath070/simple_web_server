@@ -2,7 +2,7 @@
 
 # Date:27.03.2025
 # AIM:
-To develop a simple webserver to serve html pages and display the configuration details of laptop.
+To develop a simple webserver to serve html pages and display the Details of My college
 
 # DESIGN STEPS:
 ## Step 1:
@@ -22,7 +22,6 @@ Testing the webserver.
 
 # PROGRAM:
 
-```
 from http.server import BaseHTTPRequestHandler, HTTPServer
 
 class My(BaseHTTPRequestHandler):
@@ -82,7 +81,6 @@ httpd = HTTPServer(server_address, My)
 
 print("My webserver is running...")
 httpd.serve_forever()
-```
 # OUTPUT:
 
 ![alt text](<Screenshot 2025-03-27 215056.png>)
